@@ -339,7 +339,7 @@ namespace SuccessAppService.Framework.Ultility
         public SqlConnection Connect()
         {
             var _SqlConnection = new SqlConnection();
-            String _MainConnectionString = ConfigurationManager.ConnectionStrings["HRMS"].ToString();
+            String _MainConnectionString = ConfigurationManager.ConnectionStrings["SUCCESSAPP"].ToString();
             try
             {
                 _SqlConnection = new SqlConnection(_MainConnectionString);
