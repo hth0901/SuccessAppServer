@@ -105,17 +105,22 @@
     <Content Include="Extends DLL\Excel.dll" />
     <Content Include="Extends DLL\Newtonsoft.Json.dll" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\KdcController.cs" />
     <Compile Include="Framework\Access\aTestAccess.cs" />
+    <Compile Include="Framework\Access\aUserAccess.cs" />
+    <Compile Include="Framework\Core\ApiControllerBase.cs" />
     <Compile Include="Framework\Entity\eCategoryChar.cs" />
     <Compile Include="Framework\Entity\eCharAttDoughnut.cs" />
     <Compile Include="Framework\Entity\eCharAttri.cs" />
     <Compile Include="Framework\Entity\eLabel.cs" />
     <Compile Include="Framework\Entity\eProduct.cs" />
+    <Compile Include="Framework\Entity\eUser.cs" />
     <Compile Include="Framework\Ultility\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
