@@ -396,6 +396,7 @@ namespace SuccessAppService.Framework.Ultility
         /// </summary>
         /// <param name="filepath"></param>
         /// <returns></returns>
+        /*
         public static System.Data.DataTable GetDataFromExcel_v3(string filepath)
         {
             try
@@ -420,6 +421,6 @@ namespace SuccessAppService.Framework.Ultility
             {
                 return null;
             }
-        }
+        }*/
     }
 }

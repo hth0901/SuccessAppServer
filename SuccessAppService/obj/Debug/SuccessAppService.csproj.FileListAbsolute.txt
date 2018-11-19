@@ -26,4 +26,3 @@ D:\Workspace\SuccessAppServer\SuccessAppService\bin\System.Web.Http.WebHost.xml
 D:\Workspace\SuccessAppServer\SuccessAppService\obj\Debug\SuccessAppService.csprojResolveAssemblyReference.cache
 D:\Workspace\SuccessAppServer\SuccessAppService\obj\Debug\SuccessAppService.dll
 D:\Workspace\SuccessAppServer\SuccessAppService\obj\Debug\SuccessAppService.pdb
-D:\Workspace\SuccessAppServer\SuccessAppService\bin\Excel.dll
