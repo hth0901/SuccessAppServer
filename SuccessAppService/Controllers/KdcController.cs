@@ -37,5 +37,22 @@ namespace SuccessAppService.Controllers
                 return response;
             });
         }
+
+        [Route("createuser")]
+        [HttpPost]
+        public HttpResponseMessage createUser(HttpRequestMessage request, eUser user)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage res = null;
+                if (!ModelState.IsValid)
+                    res = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                else
+                {
+                    res = request.CreateResponse(HttpStatusCode.Created, user);
+                }
+                return res;
+            });
+        }
     }
 }

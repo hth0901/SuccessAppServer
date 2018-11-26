@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -113,18 +117,27 @@
     <Compile Include="Framework\Access\aTestAccess.cs" />
     <Compile Include="Framework\Access\aUserAccess.cs" />
     <Compile Include="Framework\Core\ApiControllerBase.cs" />
+    <Compile Include="Framework\DAL\UserController.cs" />
+    <Compile Include="Framework\DAL\UserRoleController.cs" />
+    <Compile Include="Framework\Entity\ApplicationUser.cs" />
     <Compile Include="Framework\Entity\eCategoryChar.cs" />
     <Compile Include="Framework\Entity\eCharAttDoughnut.cs" />
     <Compile Include="Framework\Entity\eCharAttri.cs" />
     <Compile Include="Framework\Entity\eLabel.cs" />
     <Compile Include="Framework\Entity\eProduct.cs" />
     <Compile Include="Framework\Entity\eUser.cs" />
+    <Compile Include="Framework\Entity\LoginInfo.cs" />
+    <Compile Include="Framework\Entity\RoleInfo.cs" />
+    <Compile Include="Framework\Entity\UserInfo.cs" />
+    <Compile Include="Framework\Entity\UserRoleInfo.cs" />
+    <Compile Include="Framework\IdentityStore\UserStore.cs" />
     <Compile Include="Framework\Ultility\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Framework\Ultility\CurrentSession.cs" />
     <Compile Include="Framework\Ultility\DBHelper.cs" />
     <Compile Include="Framework\Ultility\ED5Helper.cs" />
+    <Compile Include="Framework\Ultility\Enums.cs" />
     <Compile Include="Framework\Ultility\FileHelper.cs" />
     <Compile Include="Framework\Ultility\JsonHelper.cs" />
     <Compile Include="Framework\Ultility\MessageHelper.cs" />

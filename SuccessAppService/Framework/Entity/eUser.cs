@@ -7,6 +7,7 @@ namespace SuccessAppService.Framework.Entity
 {
     public class eUser
     {
+        public int ID { get; set; }
         public string USERNAME { get; set; }
         public string PASSWORD { get; set; }
         public string EMAIL { get; set; }
