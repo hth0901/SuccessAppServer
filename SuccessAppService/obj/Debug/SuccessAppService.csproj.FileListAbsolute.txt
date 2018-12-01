@@ -27,3 +27,17 @@ D:\Workspace\SuccessAppServer\SuccessAppService\bin\roslyn\VBCSCompiler.exe
 D:\Workspace\SuccessAppServer\SuccessAppService\bin\roslyn\VBCSCompiler.exe.config
 D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.AspNet.Identity.Core.dll
 D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Workspace\SuccessAppServer\SuccessAppService\obj\Debug\SuccessAppService.csprojResolveAssemblyReference.cache
+D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.Owin.dll
+D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.Owin.Security.dll
+D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Workspace\SuccessAppServer\SuccessAppService\bin\Owin.dll
+D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.Owin.xml
+D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.Owin.Security.xml
+D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.Owin.Security.OAuth.xml

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using SuccessAppService.Framework.Access;
 using SuccessAppService.Framework.DAL;
 using SuccessAppService.Framework.Entity;
 using System;
@@ -9,7 +10,7 @@ using System.Web;
 
 namespace SuccessAppService.Framework.IdentityStore
 {
-    public class UserStore: IUserStore<ApplicationUser>, IUserRoleStore<ApplicationUser>
+    public class UserStore: IUserStore<ApplicationUser>, IUserRoleStore<ApplicationUser>,  IUserEmailStore<ApplicationUser>
     {
         #region IUserStore
         public Task CreateAsync(ApplicationUser user)
@@ -60,7 +61,8 @@ namespace SuccessAppService.Framework.IdentityStore
             {
                 return Task.Factory.StartNew(() =>
                 {
-                    return UserController.GetUserByUsername(userName);
+                    //return UserController.GetUserByUsername(userName);
+                    return aUserAccess.getUserByUserName(userName);
                 });
             }
             throw new ArgumentNullException("userName");
@@ -85,6 +87,19 @@ namespace SuccessAppService.Framework.IdentityStore
                 });
             }
             throw new ArgumentNullException("userName");
+        }
+
+        public Task<ApplicationUser> FindByEmailAsync(string email)
+        {
+            if (!string.IsNullOrEmpty(email))
+            {
+                return Task.Factory.StartNew(() =>
+                {
+                    //return UserController.GetUserByUsername(email);
+                    return aUserAccess.getUserByEmail(email);
+                });
+            }
+            throw new ArgumentNullException("email");
         }
         #endregion
 
@@ -163,6 +178,31 @@ namespace SuccessAppService.Framework.IdentityStore
         {
             throw new NotImplementedException();
         }
+
+        public Task SetEmailAsync(ApplicationUser user, string email)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<string> GetEmailAsync(ApplicationUser user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> GetEmailConfirmedAsync(ApplicationUser user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task SetEmailConfirmedAsync(ApplicationUser user, bool confirmed)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
+        //Task CreateAsync(TUser user);
+        //Task DeleteAsync(TUser user);
+        //Task<TUser> FindByIdAsync(TKey userId);
+        //Task<TUser> FindByNameAsync(string userName);
+        //Task UpdateAsync(TUser user);
     }
 }

@@ -45,6 +45,7 @@ namespace SuccessAppService.Framework.DAL
             //parameters.Add(new ParameterInfo() { ParameterName = "Username", ParameterValue = userName });
             //ApplicationUser oUser = SqlHelper.GetRecord<ApplicationUser>("GetUserByUsername", parameters);
             ApplicationUser oUser = new ApplicationUser();
+            oUser.UserName = userName;
             return oUser;
         }
 

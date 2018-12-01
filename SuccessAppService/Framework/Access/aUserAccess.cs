@@ -58,7 +58,7 @@ namespace SuccessAppService.Framework.Access
             return int.Parse(result.ToString());
         }
 
-        public static bool deleteUser(int userId)
+        public static bool deleteUser(string userId)
         {
             bool result = false;
             string sp_name = "SP_DELETE_USER";
@@ -66,6 +66,76 @@ namespace SuccessAppService.Framework.Access
             _param[0] = new SqlParameter("@ID", userId);
 
             DataTable dtResult = DBHelper.getDataTable_SP(sp_name, _param);
+            if (dtResult.Rows[0][0].ToString() == "OK")
+                result = true;
+            return result;
+        }
+
+        public static ApplicationUser getUserByUserName(string username)
+        {
+            string sp_name = "SP_GET_USER_BY_USERNAME";
+            SqlParameter[] _param = new SqlParameter[1];
+            _param[0] = new SqlParameter("@Username", username);
+            DataTable dtResult = DBHelper.getDataTable_SP(sp_name, _param);
+            ApplicationUser objResult = new ApplicationUser();
+            if (dtResult.Rows.Count > 0)
+            {
+                DataRow row = dtResult.Rows[0];
+                objResult.Id = row["Id"].ToString();
+                objResult.UserName = row["Username"].ToString();
+                objResult.Email = row["Email"].ToString();
+                objResult.Password = row["Password"].ToString();
+                int status = int.Parse(row["Status"].ToString());
+                objResult.Status = (EnumUserStatus)status;
+                objResult.IsDelete = Convert.ToBoolean(row["IsDelete"]);
+            }
+            return objResult;
+        }
+
+        public static ApplicationUser getUserByEmail(string email)
+        {
+            string sp_name = "SP_GET_USER_BY_EMAIL";
+            SqlParameter[] _param = new SqlParameter[1];
+            _param[0] = new SqlParameter("@Email", email);
+            DataTable dtResult = DBHelper.getDataTable_SP(sp_name, _param);
+            ApplicationUser objResult = new ApplicationUser();
+            if (dtResult.Rows.Count > 0)
+            {
+                DataRow row = dtResult.Rows[0];
+                objResult.Id = row["Id"].ToString();
+                objResult.UserName = row["Username"].ToString();
+                objResult.Email = row["Email"].ToString();
+                objResult.Password = row["Password"].ToString();
+                int status = int.Parse(row["Status"].ToString());
+                objResult.Status = (EnumUserStatus)status;
+                objResult.IsDelete = Convert.ToBoolean(row["IsDelete"]);
+            }
+            return objResult;
+        }
+
+        public static bool updateUserStatus(UserInfo _user)
+        {
+            string sp_name = "SP_UPDATE_USER_STATUS";
+            SqlParameter[] _param = new SqlParameter[2];
+            _param[0] = new SqlParameter("@UserId", int.Parse(_user.Id));
+            _param[1] = new SqlParameter("@Status", _user.Status);
+            DataTable dtResult = DBHelper.getDataTable_SP(sp_name, _param);
+            bool result = false;
+            if (dtResult.Rows[0][0].ToString() == "OK")
+                result = true;
+            return result;
+        }
+
+        public static bool createNewuser(UserInfo _user)
+        {
+            string sp_name = "SP_CREATE_NEW_USER";
+            SqlParameter[] _param = new SqlParameter[4];
+            _param[0] = new SqlParameter("@UserName", _user.UserName);
+            _param[1] = new SqlParameter("@Email", _user.Email);
+            _param[2] = new SqlParameter("@Password", _user.Password);
+            _param[3] = new SqlParameter("@Status", _user.Status);
+            DataTable dtResult = DBHelper.getDataTable_SP(sp_name, _param);
+            bool result = false;
             if (dtResult.Rows[0][0].ToString() == "OK")
                 result = true;
             return result;

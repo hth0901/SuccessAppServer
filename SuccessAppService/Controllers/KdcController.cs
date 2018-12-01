@@ -8,6 +8,9 @@ using SuccessAppService.Framework.Core;
 using System.Data;
 using SuccessAppService.Framework.Access;
 using SuccessAppService.Framework.Entity;
+using SuccessAppService.App_Start;
+using System.Web;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace SuccessAppService.Controllers
 {
