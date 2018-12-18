@@ -87,7 +87,8 @@ namespace SuccessAppService.Framework.Access
                 objResult.Password = row["Password"].ToString();
                 int status = int.Parse(row["Status"].ToString());
                 objResult.Status = (EnumUserStatus)status;
-                objResult.IsDelete = Convert.ToBoolean(row["IsDelete"]);
+                //objResult.IsDelete = Convert.ToBoolean(row["IsDelete"]);
+                objResult.IsDelete = false;
             }
             return objResult;
         }
