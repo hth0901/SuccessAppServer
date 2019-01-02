@@ -41,3 +41,6 @@ D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.Owin.Host.SystemWe
 D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.Owin.Security.xml
 D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.Owin.Security.Cookies.xml
 D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Workspace\SuccessAppServer\SuccessAppService\bin\System.Web.Cors.dll
+D:\Workspace\SuccessAppServer\SuccessAppService\bin\System.Web.Http.Cors.dll
+D:\Workspace\SuccessAppServer\SuccessAppService\bin\System.Web.Http.Cors.xml

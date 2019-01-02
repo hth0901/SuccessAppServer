@@ -67,13 +67,23 @@ namespace SuccessAppService.Controllers
             string result = "";
             _userInfo.Password = ED5Helper.Encrypt(_userInfo.Password);
             ApplicationUser oUser = await SignInManager.UserManager.FindByNameAsync(_userInfo.UserName);
+            eLoginResult objResult = new eLoginResult();
             if (string.IsNullOrEmpty(oUser.Id) || oUser.IsDelete)
-                result = "User does not exist";
+            {
+                objResult.loginSuccess = false;
+                objResult.errMessage = "User does not exist";
+            }
             else if (oUser.Password != _userInfo.Password)
-                result = "Wrong password";
+            {
+                objResult.loginSuccess = false;
+                objResult.errMessage = "Wrong password";
+            }
             else
-                result = "Login success";
-            return request.CreateResponse(HttpStatusCode.OK, result);
+            {
+                objResult.loginSuccess = true;
+                objResult.userLogin = oUser;
+            }
+            return request.CreateResponse(HttpStatusCode.OK, objResult);
         }
 
         [HttpPost]
