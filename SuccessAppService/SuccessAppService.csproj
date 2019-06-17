@@ -131,6 +131,7 @@
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Properties\PublishProfiles\test.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -139,9 +140,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Extends DLL\Excel.4.5.dll" />
-    <Content Include="Extends DLL\Excel.dll" />
-    <Content Include="Extends DLL\Newtonsoft.Json.dll" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -153,7 +151,10 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ExamController.cs" />
     <Compile Include="Controllers\KdcController.cs" />
+    <Compile Include="Framework\Access\aExamAccess.cs" />
+    <Compile Include="Framework\Access\aQuestionAccess.cs" />
     <Compile Include="Framework\Access\aTestAccess.cs" />
     <Compile Include="Framework\Access\aUserAccess.cs" />
     <Compile Include="Framework\Core\ApiControllerBase.cs" />
@@ -163,9 +164,11 @@
     <Compile Include="Framework\Entity\eCategoryChar.cs" />
     <Compile Include="Framework\Entity\eCharAttDoughnut.cs" />
     <Compile Include="Framework\Entity\eCharAttri.cs" />
+    <Compile Include="Framework\Entity\eExam.cs" />
     <Compile Include="Framework\Entity\eLabel.cs" />
     <Compile Include="Framework\Entity\eLoginResult.cs" />
     <Compile Include="Framework\Entity\eProduct.cs" />
+    <Compile Include="Framework\Entity\eQuestion.cs" />
     <Compile Include="Framework\Entity\eUser.cs" />
     <Compile Include="Framework\Entity\LoginInfo.cs" />
     <Compile Include="Framework\Entity\RoleInfo.cs" />
@@ -194,6 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Extends DLL\" />
     <Folder Include="Framework\Business\" />
   </ItemGroup>
   <PropertyGroup>
