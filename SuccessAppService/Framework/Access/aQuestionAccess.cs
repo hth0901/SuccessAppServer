@@ -34,10 +34,11 @@ namespace SuccessAppService.Framework.Access
         public static bool createNewQuestion(eQuestion _question)
         {
             string spName = "SP_T_QUESTION_INSERT_TEST";
-            SqlParameter[] param = new SqlParameter[3];
-            param[0] = new SqlParameter("@pExamName", _question.QUESTION_CODE);
-            param[1] = new SqlParameter("@pExamCodeValue", _question.EXAM_CODE);
-            param[2] = new SqlParameter("@pExamDesc", _question.QUESTION_CONTENT);
+            SqlParameter[] param = new SqlParameter[4];
+            param[0] = new SqlParameter("@pPart", _question.PART);
+            param[1] = new SqlParameter("@pExamCode", _question.EXAM_CODE);
+            param[2] = new SqlParameter("@pClassify", _question.CLASSIFY);
+            param[3] = new SqlParameter("@pQuestionContent", _question.QUESTION_CONTENT);
 
             DataTable dtResult = DBHelper.getDataTable_SP(spName, param);
             bool result = false;
