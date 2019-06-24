@@ -48,5 +48,26 @@ namespace SuccessAppService.Controllers
                 return res;
             });
         }
+
+        [Route("updatequestion")]
+        [HttpPut]
+        public HttpResponseMessage updateQuestion(HttpRequestMessage req, eQuestion question)
+        {
+            return CreateHttpResponse(req, () =>
+            {
+                HttpResponseMessage res = null;
+                //if (!ModelState.IsValid)
+                //{
+                //    res = req.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                //}
+                //else
+                //{
+                //    bool insertResult = aQuestionAccess.createNewQuestion(question);
+                //    res = req.CreateResponse(HttpStatusCode.Created, insertResult);
+                //}
+                res = req.CreateResponse(HttpStatusCode.Created, true);
+                return res;
+            });
+        }
     }
 }
