@@ -49,6 +49,26 @@ namespace SuccessAppService.Controllers
             });
         }
 
+        [Route("insertnewquestion")]
+        [HttpPost]
+        public HttpResponseMessage insertNewQuestion(HttpRequestMessage req, eQuestionDetail question)
+        {
+            return CreateHttpResponse(req, () =>
+            {
+                HttpResponseMessage res = null;
+                if (!ModelState.IsValid)
+                {
+                    res = req.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    bool insertResult = aQuestionAccess.inserNewQuestion(question);
+                    res = req.CreateResponse(HttpStatusCode.Created, insertResult);
+                }
+                return res;
+            });
+        }
+
         [Route("updatequestion")]
         [HttpPut]
         public HttpResponseMessage updateQuestion(HttpRequestMessage req, eQuestion question)
@@ -66,6 +86,19 @@ namespace SuccessAppService.Controllers
                 //    res = req.CreateResponse(HttpStatusCode.Created, insertResult);
                 //}
                 res = req.CreateResponse(HttpStatusCode.Created, true);
+                return res;
+            });
+        }
+
+        [Route("getquestiondetail")]
+        [HttpGet]
+        public HttpResponseMessage getQuestionDetail(HttpRequestMessage req, string questionCode)
+        {
+            return CreateHttpResponse(req, () =>
+            {
+                HttpResponseMessage res = null;
+                eQuestionDetail eResult = aQuestionAccess.getQuestionDetail(questionCode);
+                res = req.CreateResponse(HttpStatusCode.OK, eResult);
                 return res;
             });
         }
