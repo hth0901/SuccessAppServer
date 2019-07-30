@@ -71,21 +71,21 @@ namespace SuccessAppService.Controllers
 
         [Route("updatequestion")]
         [HttpPut]
-        public HttpResponseMessage updateQuestion(HttpRequestMessage req, eQuestion question)
+        public HttpResponseMessage updateQuestion(HttpRequestMessage req, eQuestionDetail question)
         {
             return CreateHttpResponse(req, () =>
             {
                 HttpResponseMessage res = null;
-                //if (!ModelState.IsValid)
-                //{
-                //    res = req.CreateResponse(HttpStatusCode.BadRequest, ModelState);
-                //}
-                //else
-                //{
-                //    bool insertResult = aQuestionAccess.createNewQuestion(question);
-                //    res = req.CreateResponse(HttpStatusCode.Created, insertResult);
-                //}
-                res = req.CreateResponse(HttpStatusCode.Created, true);
+                if (!ModelState.IsValid)
+                {
+                    res = req.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    bool insertResult = aQuestionAccess.updateQuestion(question);
+                    res = req.CreateResponse(HttpStatusCode.Created, insertResult);
+                }
+                //res = req.CreateResponse(HttpStatusCode.Created, question);
                 return res;
             });
         }

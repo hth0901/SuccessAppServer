@@ -77,6 +77,15 @@ namespace SuccessAppService.Framework.IdentityStore
             throw new ArgumentNullException("userName");
         }
 
+        public ApplicationUser FindByNameAndPassword(string userName, string password)
+        {
+            if (!string.IsNullOrEmpty(userName))
+            {
+                return UserController.GetUserByUsername(userName);
+            }
+            throw new ArgumentNullException("userName");
+        }
+
         public Task UpdateAsync(ApplicationUser user)
         {
             if (user != null)
@@ -198,6 +207,19 @@ namespace SuccessAppService.Framework.IdentityStore
         {
             throw new NotImplementedException();
         }
+
+        //public Task FindAsync(string userName, string password)
+        //{
+        //    if (!string.IsNullOrEmpty(userName))
+        //    {
+        //        return Task.Factory.StartNew(() =>
+        //        {
+        //            //return UserController.GetUserByUsername(userName);
+        //            return aUserAccess.getUserByUserName(userName);
+        //        });
+        //    }
+        //    throw new ArgumentNullException("userName");
+        //}
         #endregion
         //Task CreateAsync(TUser user);
         //Task DeleteAsync(TUser user);

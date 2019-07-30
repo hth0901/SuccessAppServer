@@ -153,6 +153,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ExamController.cs" />
     <Compile Include="Controllers\KdcController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Framework\Access\aExamAccess.cs" />
     <Compile Include="Framework\Access\aQuestionAccess.cs" />

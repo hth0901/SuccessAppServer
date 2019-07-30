@@ -67,6 +67,7 @@ namespace SuccessAppService.Controllers
             string result = "";
             _userInfo.Password = ED5Helper.Encrypt(_userInfo.Password);
             ApplicationUser oUser = await SignInManager.UserManager.FindByNameAsync(_userInfo.UserName);
+            //ApplicationUser oUser = await SignInManager.UserManager.FindByNameAsync(_userInfo.UserName, _userInfo.Password);
             eLoginResult objResult = new eLoginResult();
             if (string.IsNullOrEmpty(oUser.Id) || oUser.IsDelete)
             {
