@@ -30,6 +30,24 @@ namespace SuccessAppService.Framework.Access
             return lstResult;
         }
 
+        public static eLoginResult doLogin(string user, string password)
+        {
+            string _sp = "SP_DO_LOGIN_SIMPLE";
+            SqlParameter[] _param = new SqlParameter[2];
+
+            _param[0] = new SqlParameter("@PID", user);
+            _param[1] = new SqlParameter("@PPASSWORD", password);
+
+            DataTable dtResult = DBHelper.getDataTable_SP(_sp, _param);
+
+            eLoginResult result = new eLoginResult();
+            result.errMessage = dtResult.Rows[0]["MES"].ToString();
+            result.loginSuccess = false;
+            if (dtResult.Rows[0]["RESULT"].ToString() == "OK")
+                result.loginSuccess = true;
+            return result;
+        }
+
         public static eUser getUserByName(string name)
         {
             string sp_name = "SP_GET_USER_BY_USERNAME";

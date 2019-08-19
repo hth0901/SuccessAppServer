@@ -28,7 +28,8 @@ namespace SuccessAppService.Controllers
                 }
                 else
                 {
-                    UserInfo insertResult = aUserAccess.getUserByUserName(_user.UserName);
+                    _user.Password = ED5Helper.Encrypt(_user.Password);
+                    eLoginResult insertResult = aUserAccess.doLogin(_user.UserName, _user.Password);
                     res = req.CreateResponse(HttpStatusCode.Created, insertResult);
                 }
                 return res;
