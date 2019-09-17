@@ -155,8 +155,10 @@
     <Compile Include="Controllers\KdcController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
+    <Compile Include="Controllers\SemesterController.cs" />
     <Compile Include="Framework\Access\aExamAccess.cs" />
     <Compile Include="Framework\Access\aQuestionAccess.cs" />
+    <Compile Include="Framework\Access\aSemesterAccess.cs" />
     <Compile Include="Framework\Access\aTestAccess.cs" />
     <Compile Include="Framework\Access\aUserAccess.cs" />
     <Compile Include="Framework\Core\ApiControllerBase.cs" />
@@ -171,6 +173,8 @@
     <Compile Include="Framework\Entity\eLoginResult.cs" />
     <Compile Include="Framework\Entity\eProduct.cs" />
     <Compile Include="Framework\Entity\eQuestion.cs" />
+    <Compile Include="Framework\Entity\eResult.cs" />
+    <Compile Include="Framework\Entity\eSemester.cs" />
     <Compile Include="Framework\Entity\eUser.cs" />
     <Compile Include="Framework\Entity\LoginInfo.cs" />
     <Compile Include="Framework\Entity\RoleInfo.cs" />
