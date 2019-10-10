@@ -27,7 +27,6 @@ D:\Workspace\SuccessAppServer\SuccessAppService\bin\roslyn\VBCSCompiler.exe
 D:\Workspace\SuccessAppServer\SuccessAppService\bin\roslyn\VBCSCompiler.exe.config
 D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.AspNet.Identity.Core.dll
 D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.AspNet.Identity.Core.xml
-D:\Workspace\SuccessAppServer\SuccessAppService\obj\Debug\SuccessAppService.csprojResolveAssemblyReference.cache
 D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.AspNet.Identity.Owin.dll
 D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.Owin.dll
 D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.Owin.Host.SystemWeb.dll
@@ -44,3 +43,6 @@ D:\Workspace\SuccessAppServer\SuccessAppService\bin\Microsoft.Owin.Security.OAut
 D:\Workspace\SuccessAppServer\SuccessAppService\bin\System.Web.Cors.dll
 D:\Workspace\SuccessAppServer\SuccessAppService\bin\System.Web.Http.Cors.dll
 D:\Workspace\SuccessAppServer\SuccessAppService\bin\System.Web.Http.Cors.xml
+D:\Workspace\SuccessAppServer\SuccessAppService\obj\Debug\SuccessAppService.csprojAssemblyReference.cache
+D:\Workspace\SuccessAppServer\SuccessAppService\obj\Debug\SuccessAppService.csproj.CoreCompileInputs.cache
+D:\Workspace\SuccessAppServer\SuccessAppService\obj\Debug\SuccessAppService.csproj.CopyComplete
